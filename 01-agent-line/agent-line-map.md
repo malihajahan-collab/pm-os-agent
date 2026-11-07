@@ -21,9 +21,9 @@ List every discrete decision or action in your agent's workflow, then score each
 
 ## Agent anatomy (sketch)
 
-- **Model:** _your default fast model + when you escalate to a frontier model, and why_
-- **Tools:** _project + activity lookup (read) · past-update search · roadmap · team norms · story proposal (capped) …_
-- **Memory:** _what persists across runs (roadmap, decisions, norms) vs. purged_
+- **Model:** Mini by default, and a frontier model for the draft you will review. The expensive model is spent where the blast radius is high. Reads and capped proposals stay on the cheap model.
+- **Tools:** `get_project`, `get_activity`, `search_past_updates`, `get_roadmap`, `get_norms`, and `propose_stories`. The story tool only queues. Reads and a capped proposal are allowed, and posting stays with you.
+- **Memory:** Sources persist, drafts do not become facts. The roadmap, team norms, past updates, and decision log are the record. A held draft is still unapproved, so the next run should not treat it as what happened.
 - **Loop:** _placeholder, defined in M2 loop-spec.md_
 - **Bounds:** _placeholder, defined in M5 bounds-and-evals.md_
 - **Evals:** _placeholder, defined in M5 bounds-and-evals.md_
