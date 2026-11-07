@@ -10,12 +10,14 @@ List every discrete decision or action in your agent's workflow, then score each
 
 | Decision / action | Reversibility (H/M/L) | Blast radius (H/M/L) | Measurability (H/M/L) | Above / Below | HITL? |
 |---|---|---|---|---|---|
-| _Pull project state + recent GitHub/Jira activity_ | H | L | H | Below | · |
-| _Draft the weekly leadership status update_ | H | M | M | Below | spot-check |
-| _Propose next sprint's stories from the PRD (within cap)_ | M | M | M | Below | spot-check |
-| _Post the update to a channel / commit a ship date_ | L | H | M | Above | required |
-| _Mark a launch gate green / merge or close a ticket_ | L | H | M | Above | required |
-| _…_ | | | | | |
+| Pull project state and activity | H | L | H | Below | no |
+| Decide relevant context | M | M | L | Above | no |
+| Draft the update | H | L | H | Below | no |
+| Decide tone and commitment level | M | H | L | Above | no |
+| Flag at-risk or escalation (rule-based internal flags) | M | M | H | HITL | yes |
+| Choose what to escalate | L | H | L | Above | no |
+| Propose a story batch (capped) | H | L | M | HITL | yes |
+| Post an update, or approve a company-wide one | L | H | M | Above | no |
 
 ## Agent anatomy (sketch)
 
@@ -28,7 +30,21 @@ List every discrete decision or action in your agent's workflow, then score each
 
 ## The golden rule, applied
 
-_One sentence per above-the-line decision: why it stays human (which of reversibility / blast radius / measurability failed)._
+Pull project state and activity sits below the line because it is easy to rerun, has a low blast radius, and is straightforward to verify against agreed sources, with reversibility deciding the verdict.
+
+Decide relevant context sits above the line because reversibility is medium, its blast radius is medium, and relevance is difficult to verify, with measurability deciding the verdict because important omissions can go unnoticed.
+
+Draft the update sits below the line because a private draft is easy to revise, has a low blast radius, and can be checked against approved context and sources, with reversibility deciding the verdict.
+
+Decide tone and commitment level sits above the line because reversibility is medium, its blast radius is high, and appropriateness is difficult to verify, with blast radius deciding the verdict because other teams may act on a promise.
+
+Flag at-risk or escalation sits at HITL because reversibility and blast radius are medium while agreed triggers make verification straightforward, with blast radius deciding the verdict because a missed flag can delay intervention.
+
+Choose what to escalate sits above the line because it is hard to reverse, has a high blast radius, and is difficult to verify objectively, with blast radius deciding the verdict because escalation can redirect people and priorities.
+
+Propose a story batch (capped) sits at HITL because the proposal is easy to revise and has a low blast radius, but measurability is medium, with measurability deciding the verdict because rule compliance alone cannot establish whether the batch fits current priorities.
+
+Post an update, or approve a company-wide one sits above the line because publication is hard to reverse, has a high blast radius, and has medium measurability, with blast radius deciding the verdict because readers across the company may act before a correction reaches them.
 
 ## Hardest call
 
