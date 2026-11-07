@@ -48,4 +48,4 @@ Post an update, or approve a company-wide one sits above the line because public
 
 ## Hardest call
 
-_Your toughest "above vs below" decision and how you resolved it. (Share this in `#cohort-channel`.)_
+The hardest call is 5, Flag at-risk or escalation. Explicit triggers make it highly measurable, which initially supported placing it below. But reviewing only the flags Cortex produces would miss false negatives. HITL therefore means I review the trigger coverage and supporting project state as well as the proposed flags. That makes the human review meaningful for the medium blast radius that settled this placement.
